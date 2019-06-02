@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+
 
 from .models import BlogPost
 
@@ -17,7 +18,7 @@ def index(request):
 
 def blog_post(request, blog_post_id):
     """Show a signel blog post"""
-    blog_post = BlogPost.objects.get(id=blog_post_id)
+    blog_post = get_object_or_404(BlogPost, id=blog_post_id)
     context = {'blog_post': blog_post}
     return render(request, 'blogs/blog_post.html', context)
 
