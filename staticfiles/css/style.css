@@ -1,0 +1,15 @@
+/* change the brand and text color */
+.navbar-brand, span, div ul li a {
+    color: white;
+}
+
+/* change the brand and text color */
+.navbar-brand:hover, div ul li a:hover {
+    color: cyan;
+}
+
+div h4 a:link {
+    color: darkcyan;
+}
+
+
